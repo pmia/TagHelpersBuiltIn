@@ -27,10 +27,10 @@ namespace TagHelpersBuiltIn
             });
 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            #region snippet_AllowAreas
-            services.AddMvc()
-                    .AddRazorPagesOptions(options => options.AllowAreas = true);
-            #endregion
+            //#region snippet_AllowAreas
+            //services.AddMvc()
+            //        .AddRazorPagesOptions(options => options.AllowAreas = true);
+            //#endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +51,7 @@ namespace TagHelpersBuiltIn
             app.UseCookiePolicy();
 
             #region snippet_UseMvc
+
             app.UseMvc(routes =>
             {
                 // need route and attribute on controller: [Area("Blogs")]
@@ -62,7 +63,8 @@ namespace TagHelpersBuiltIn
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            #endregion
+
+            #endregion snippet_UseMvc
         }
     }
 }
